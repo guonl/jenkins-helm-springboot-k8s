@@ -18,7 +18,7 @@ spec:
         io.kompose.service: springboot-helm
     spec:
       containers:
-      - image: hub.tigerobo.com:88/tigerobo/springboot-helm:latest
+      - image: "{{.Values.Image}}:{{.Values.ImageTag}}"
         name: springboot-helm
         ports:
         - containerPort: 8080
