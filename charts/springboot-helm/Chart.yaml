@@ -1,0 +1,8 @@
+name: springboot-helm
+description: A generated Helm Chart for springboot-helm from Skippbox Kompose
+appVersion: "1.0"
+version: 0.0.1
+keywords:
+  - springboot-helm
+sources:
+home:

@@ -1,0 +1,11 @@
+#docker-compose
+#通过下面的指令生成helm需要的目录结构：
+#  kompose convert -c springboot-helm.yml
+
+version: '2'
+
+services:
+  springboot-helm:
+    image: hub.tigerobo.com:88/tigerobo/springboot-helm:latest
+    ports:
+      - 8080:8080
