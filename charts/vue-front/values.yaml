@@ -4,7 +4,7 @@
 # name: value
 
 ServiceType: NodePort
-Image: hub.tigerobo.com:88/tigerobo/nginx
+Image: hub.tigerobo.com:88/tigerobo/vue-front
 Imagetag: 'latest'
 Replicas: 1
 ImagePullPolicy: "Always"
@@ -12,4 +12,4 @@ Cpu: "10m"
 Memory: "128Mi"
 ContainerPort: 80
 ServicePort: 80
-DomainName: my-nginx
+DomainName: vue-front

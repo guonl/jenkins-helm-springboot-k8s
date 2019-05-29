@@ -1,9 +1,9 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: {{ template "my-nginx.full_name" . }}
+  name: {{ template "vue-front.full_name" . }}
   labels: 
-    {{- include "my-nginx.release_labels" . | indent 4 }}
+    {{- include "vue-front.release_labels" . | indent 4 }}
 spec:
   rules:
   - host: {{.Values.DomainName}}.buyabs.corp
@@ -11,5 +11,5 @@ spec:
       paths:
       - path: /
         backend:
-          serviceName: {{ template "my-nginx.full_name" . }}
+          serviceName: {{ template "vue-front.full_name" . }}
           servicePort: 80

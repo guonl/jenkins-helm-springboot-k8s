@@ -1,18 +1,18 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: {{ template "my-nginx.full_name" . }}
+  name: {{ template "vue-front.full_name" . }}
   labels: 
-    {{- include "my-nginx.release_labels" . | indent 4 }}
+    {{- include "vue-front.release_labels" . | indent 4 }}
 spec:
   replicas: {{ default 1 .Values.Replicas }}
   template:
     metadata:
       labels:
-        {{- include "my-nginx.release_labels" . | indent 8 }}
+        {{- include "vue-front.release_labels" . | indent 8 }}
     spec:
       containers:
-        - name: my-nginx
+        - name: vue-front
           image: "{{.Values.Image}}:{{.Values.ImageTag}}"
           imagePullPolicy: "{{.Values.ImagePullPolicy}}"
           ports:
