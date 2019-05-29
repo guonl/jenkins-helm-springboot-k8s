@@ -9,7 +9,7 @@ spec:
   - host: {{.Values.DomainName}}.buyabs.corp
     http:
       paths:
-      - path: /hello
+      - path: /
         backend:
           serviceName: {{ template "springboot-helm.full_name" . }}
           servicePort: {{.Values.ContainerPort}}

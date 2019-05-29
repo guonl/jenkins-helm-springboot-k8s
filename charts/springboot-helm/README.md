@@ -1,1 +1,1 @@
-This chart was created by Kompose
+helm chart for CI/CD workflow with nignx

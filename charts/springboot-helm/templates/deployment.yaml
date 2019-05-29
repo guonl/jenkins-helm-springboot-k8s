@@ -1,21 +1,15 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  annotations:
-    kompose.cmd: kompose convert -c
-    kompose.version: 1.18.0 (06a2e56)
-  creationTimestamp: null
+  name: {{ template "springboot-helm.full_name" . }}
   labels:
-    io.kompose.service: {{ .Chart.Name }}
-  name: {{ .Chart.Name }}
+    {{- include "springboot-helm.release_labels" . | indent 4 }}
 spec:
-  replicas: 1
-  strategy: {}
+  replicas: {{ default 1 .Values.Replicas }}
   template:
     metadata:
-      creationTimestamp: null
       labels:
-        io.kompose.service: {{ .Chart.Name }}
+        {{- include "springboot-helm.release_labels" . | indent 8 }}
     spec:
       containers:
         - name: {{ .Chart.Name }}
@@ -28,4 +22,3 @@ spec:
             requests:
               cpu: "{{.Values.Cpu}}"
               memory: "{{.Values.Memory}}"
-status: {}
