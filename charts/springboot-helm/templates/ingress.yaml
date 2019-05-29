@@ -1,15 +1,15 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: {{ template "vue-front.full_name" . }}
+  name: {{ template "springboot-helm.full_name" . }}
   labels: 
-    {{- include "vue-front.release_labels" . | indent 4 }}
+    {{- include "springboot-helm.release_labels" . | indent 4 }}
 spec:
   rules:
   - host: {{.Values.DomainName}}.buyabs.corp
     http:
       paths:
-      - path: /
+      - path: /hello
         backend:
-          serviceName: {{ template "vue-front.full_name" . }}
+          serviceName: {{ template "springboot-helm.full_name" . }}
           servicePort: {{.Values.ContainerPort}}

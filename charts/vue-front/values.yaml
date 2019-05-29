@@ -4,10 +4,15 @@
 # name: value
 
 ServiceType: NodePort
-Image: hub.tigerobo.com:88/tigerobo/vue-front
-Imagetag: 'latest'
-Replicas: 1
-ImagePullPolicy: "Always"
+
+Name: vue-front
+
+image:
+  repository: hub.tigerobo.com:88/tigerobo/vue-front
+  tag: latest
+  pullPolicy: IfNotPresent
+
+Replicas: 2
 Cpu: "10m"
 Memory: "128Mi"
 ContainerPort: 80

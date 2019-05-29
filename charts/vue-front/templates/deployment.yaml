@@ -2,7 +2,7 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: {{ template "vue-front.full_name" . }}
-  labels: 
+  labels:
     {{- include "vue-front.release_labels" . | indent 4 }}
 spec:
   replicas: {{ default 1 .Values.Replicas }}
@@ -12,9 +12,9 @@ spec:
         {{- include "vue-front.release_labels" . | indent 8 }}
     spec:
       containers:
-        - name: vue-front
-          image: "{{.Values.Image}}:{{.Values.ImageTag}}"
-          imagePullPolicy: "{{.Values.ImagePullPolicy}}"
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - containerPort: {{.Values.ContainerPort}}
               protocol: TCP

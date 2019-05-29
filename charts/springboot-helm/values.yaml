@@ -4,10 +4,15 @@
 # name: value
 
 ServiceType: NodePort
-Image: hub.tigerobo.com:88/tigerobo/springboot-helm
-Imagetag: 'latest'
-Replicas: 3
-ImagePullPolicy: "Always"
+
+Name: springboot-helm
+
+image:
+  repository: hub.tigerobo.com:88/tigerobo/springboot-helm
+  tag: latest
+  pullPolicy: IfNotPresent
+
+Replicas: 1
 Cpu: "10m"
 Memory: "128Mi"
 ContainerPort: 8080
