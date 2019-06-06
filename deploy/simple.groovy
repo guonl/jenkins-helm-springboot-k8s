@@ -1,14 +1,14 @@
 
 //环境变量
-def REPOSITORY="https://github.com/Tigerye/security-fe-crm.git"
-def MODULE="security-fe-crm"
+def REPOSITORY="https://github.com/guonl/jenkins-helm-springboot-k8s.git"
+def MODULE="springboot-k8s"
 def DEPLOY_PATH="/home/jenkins/deploy"
 def SCRIPT_PATH="/home/jenkins/script"
 
 // k8s中转服务器登录配置
 def remote = [:]
 remote.name = 'k8s-proxy'
-remote.host = '10.0.8.127'
+remote.host = 'xxx'
 remote.allowAnyHosts = true
 
 
