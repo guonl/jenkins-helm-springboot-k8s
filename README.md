@@ -3,6 +3,7 @@
 
 # 目录介绍
 
+```
 .
 ├── charts    //helm的chart图表目录
 │   ├── demo
@@ -16,3 +17,4 @@
 │   └── target
 └── vue-front     //前端项目
     └── code
+```
